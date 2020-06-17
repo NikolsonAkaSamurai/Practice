@@ -1,0 +1,130 @@
+/*form*/
+
+body {
+    margin:0;
+}
+
+.form {
+    width: 500px;
+    padding: 20px;
+    margin: 0 auto 0;
+    background-color: aliceblue;
+}
+
+.title {
+    margin:0 auto 20px;
+    text-align: center;
+    text-decoration: dotted underline red;
+    
+    /* text-decoration-style: dashed; */
+    /* text-decoration-line: overline; */
+    /* text-decoration-color: blue; */
+}
+
+/* Links */
+
+.link {
+    font-family: Comic Sans MS;
+    font-weight: 600;
+    padding: 5px 10px;
+    display: inline-block;
+    color: #cc3b3b;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: blueviolet;
+}
+
+.link:hover {
+    background-color: #bbeac6;
+    text-decoration: underline;   
+}
+
+/*Form-fieldset*/
+
+.form-fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    
+    border-width: 3px;
+    border-style: groove;
+    
+    border-right-color: red; /* border-top-width: 2px; */
+    border-bottom-color: orange; /* border-right-style: dotted; */
+    border-left-color: yellow;
+    border-top-color: greenyellow;
+    
+}
+
+.form-title {
+    margin: 0 0 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    display:block;
+    padding: 5px;
+    border: 1px solid black;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.form-input:focus {
+    outline: 0;
+    background-color: lightblue;
+}
+
+.form-textarea{
+    width: 200px;
+    height: 150px;
+    padding: 5px;
+    border: 1px solid black;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    
+    outline: 5px solid pink;
+    outline-offset: 5px;
+}
+
+.form-textarea:focus {
+    outline: 0;
+    background-color: lightblue;
+}
+
+/* Button */
+
+.btn {
+    padding: 5px 10px;
+    background-color: greenyellow;
+    border: 1px solid #039803;
+    color: #241f1f;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #039803;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #064606;
+}
+
+/* Font-multi */
+
+.font-multy {
+    font: bold italic 15px/1.5 Arial, sans-serif;
+}
+
+.font-not-multy {
+    font-family: Comic Sans MS;
+    font-size: 15px;
+}
