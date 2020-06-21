@@ -22,6 +22,7 @@ $f = array(
 
 $j = false;//boolean
  
-echo $e[3];
+echo $a .' ,'.$a;
+
     
 ?>
