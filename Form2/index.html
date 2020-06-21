@@ -7,6 +7,51 @@
         </head>
         
         <body>
-            <div class="auth"></div>
+            <div class="auth">
+                <h1 class="auth-title">Регистрация</h1>
+                
+                <form acton="/" method="post">
+                    
+                    <div class="form-group">
+                        <input class="input" type="text" name="name" placeholder="Ваше полное имя">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="input" type="email" name="email" placeholder="Ваш e-mail">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="input" type="tel" name="tel" placeholder="Ваш телефон">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="input" type="password" name="password" placeholder="Придумайте пароль">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="input" type="password" name="password_confirm" placeholder="Повторите пароль">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select class="select" name="city">
+                            <option>Санкт-Петербург</option>
+                            <option>Мичуринск</option>
+                            <option>Тамбов</option>
+                            <option>Псков</option>
+                            <option>Сочи</option>
+                            <option>Адлер</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" name="rules" id="rules">
+                        <label for="rules">Принимаю условия пользования</label>
+                    </div>
+                    
+                    <button type="submit" class="btn">Готово!</button>
+                    
+                </form>
+            </div>
+            
         </body>
     </html>

@@ -8,9 +8,91 @@ body {
 /* Auth */
 
 .auth {
-    width: 300px;
+    width: 260px;
     
     padding: 20px;
     margin: 20px auto;
-    background-color: white; 
+    background-color: #fff; 
+}
+
+.auth-title {
+    font-size: 20px;
+    color: red;
+    margin: 0 0 15px;
+    
+    text-align: center;
+}
+
+/* INPUT */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input {
+    display: block;
+    padding: 8px 10px;
+    width: 238px;
+    
+    background-color: #fff;
+    border: 1px solid #ccc;
+    
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.input:focus {
+    outline: 0;
+    
+    border-color: #28cbd1;   
+}
+
+/* SELECT */
+
+.select {
+    display: block;
+    padding: 8px 10px;
+    width: 260px;
+    height: 35px;
+    
+    background-color: #fff;
+    border: 1px solid #ccc;
+    
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.select:focus {
+    outline: 0;
+    
+    border-color: #28cbd1;   
+}
+
+/* BUTTON */
+
+.btn {
+    display: block;
+    width: 260px;
+    height: 35px;
+    
+    background-color: #4bb91b;
+    border: 0;
+    
+    font-family: inherit;
+    font-size: 15px;
+    color: #fff;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:focus,
+.btn:hover {
+    background-color: #41aa14;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #3c9a14;
 }
