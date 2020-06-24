@@ -1,0 +1,99 @@
+body {
+    
+    background-color: #eee;
+
+    margin: 0;
+}
+
+/* COMPOSITION */
+
+.composition {
+    width: 500px;
+    height: 350px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    
+    background-color: #fff;
+}
+
+.road2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.car {
+    width: 300px;
+    position: absolute;
+    right: 50px;
+    bottom: 105px;
+    z-index: 3;
+}
+
+.tree1 {
+    width: 70px;
+    position: absolute;
+    right: 100px;
+    z-index: 2;
+}
+
+.tree2 {
+    width: 130px;
+    bottom: 195px;
+    position: absolute;
+    right: 250px;
+    z-index: 2;
+}
+
+.tree3 {
+    width: 190px;
+    position: absolute;
+    right: 390px;
+    bottom: 125px;
+    z-index: 2;
+}
+.runer {
+    width: 100px;
+    position: absolute;
+    right: 1px;
+    bottom: 170px;
+    z-index: 3;
+}
+
+/* WINDOWS */
+
+.windows {
+    padding: 20px;
+    margin: 0;
+    height: 250px;
+    z-index: 1;
+    
+    background-color: brown;
+}
+
+.window {
+    display: inline-block;
+    margin: auto;
+}
+
+.arduino {
+    height: 250px;
+
+}
+
+.shield {
+    height: 250px;
+
+}
+
+.micro {
+  height: 250px;
+
+}
+   
+.joistick {
+    height: 250px;
+
+}
