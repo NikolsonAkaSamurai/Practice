@@ -65,17 +65,15 @@ body {
 /* WINDOWS */
 
 .windows {
-    padding: 20px;
-    margin: 0;
-    height: 250px;
-    z-index: 1;
+    height: auto;
+    width: auto;
     
     background-color: brown;
 }
 
 .window {
     display: inline-block;
-    margin: auto;
+    border: 3px solid orange;
 }
 
 .arduino {
