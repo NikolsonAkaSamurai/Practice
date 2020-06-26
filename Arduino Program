@@ -1,0 +1,146 @@
+
+   /* Полюса двигателя Х */
+        int in1 = 3;
+        int in2 = 5;
+        int in3 = 6;
+        int in4 = 10;
+
+    /* Подготавливаем ось Y */
+        #include <Servo.h>
+        Servo servo_axis_Y;
+        int angle_Y = 90; 
+
+    /*забиваем пины джойстика*/
+      int joystick_Z = A2;
+      int joystick_X = A1;
+      int joystick_Y = A0;
+      
+      const int dl = 2;// скорость движения
+
+void setup() {
+  Serial.begin(9600);
+  //x
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  //y
+  servo_axis_Y.attach(9);
+  //joystick
+  pinMode(joystick_X, INPUT_PULLUP);
+  pinMode(joystick_Y, INPUT_PULLUP);
+  pinMode(joystick_Z, INPUT_PULLUP);
+}
+
+void loop() {
+         /* Управление осью X*/
+  
+  int val_X = analogRead(joystick_X);
+  int val_X_left = map(val_X, 0, 557, 0, 10);
+  val_X_left = constrain(val_X_left, 0, 10);
+
+      if ( val_X <= 557 && val_X >= 0 && val_X_left <9) {
+        //Шаг 1
+        digitalWrite(in1, HIGH);
+        digitalWrite(in2, HIGH);
+        digitalWrite(in3, LOW);
+        digitalWrite(in4, LOW);
+        delay(dl*val_X_left);
+        //Шаг 2
+        digitalWrite(in1, LOW);
+        digitalWrite(in2, HIGH);
+        digitalWrite(in3, HIGH);
+        digitalWrite(in4, LOW);
+        delay(dl*val_X_left);
+        //Шаг 3
+        digitalWrite(in1, LOW);
+        digitalWrite(in2, LOW);
+        digitalWrite(in3, HIGH);
+        digitalWrite(in4, HIGH);
+        delay(dl*val_X_left);
+        //Шаг 4
+        digitalWrite(in1, HIGH);
+        digitalWrite(in2, LOW);
+        digitalWrite(in3, LOW);
+        digitalWrite(in4, HIGH);
+        delay(dl*val_X_left);
+        }
+  
+  int val_X_right = map(val_X, 559, 1023, 0, 10);
+  val_X_right = constrain(val_X_right, 0, 10);
+  val_X_right = 10 - val_X_right;
+
+      if ( val_X > 557 && val_X <1023 && val_X_right < 9 ) {
+        //Шаг 4
+        digitalWrite(in1, HIGH);
+        digitalWrite(in2, LOW);
+        digitalWrite(in3, LOW);
+        digitalWrite(in4, HIGH);
+        delay(dl*val_X_left);
+        //Шаг 3
+        digitalWrite(in1, LOW);
+        digitalWrite(in2, LOW);
+        digitalWrite(in3, HIGH);
+        digitalWrite(in4, HIGH);
+        delay(dl*val_X_left);
+         //Шаг 2
+        digitalWrite(in1, LOW);
+        digitalWrite(in2, HIGH);
+        digitalWrite(in3, HIGH);
+        digitalWrite(in4, LOW);
+        delay(dl*val_X_left);
+         //Шаг 1
+        digitalWrite(in1, HIGH);
+        digitalWrite(in2, HIGH);
+        digitalWrite(in3, LOW);
+        digitalWrite(in4, LOW);
+        delay(dl*val_X_left);
+        }
+
+         /* Управление осью Y*/
+              /*bottom*/
+  int val_Y = analogRead(joystick_Y);
+  int val_Y_bottom = map(val_Y, 0, 557, 0, 10);
+  val_Y_bottom = constrain( val_Y_bottom, 0, 10);
+  val_Y_bottom = 10 - val_Y_bottom;
+  if (val_Y < 557 && val_Y > 0 && val_Y_bottom > 1 && angle_Y >0) {
+  servo_axis_Y.write(angle_Y);
+  angle_Y = angle_Y - (val_Y_bottom/3.8);                  
+  delay(dl*val_Y_bottom);}
+
+                /*top*/
+            
+  int val_Y_top = map(val_Y, 558, 1023, 0, 10);
+  val_Y_top = constrain( val_Y_top, 0, 10);
+  //val_Y_top = 10 - val_Y_top;
+  if (val_Y < 1023 && val_Y > 558 && val_Y_top > 1 && angle_Y < 180) {
+  servo_axis_Y.write(angle_Y);
+  angle_Y = angle_Y + (val_Y_top/3.8);                  
+  delay(dl*val_Y_top);}
+        /* Управление осью Z */
+  
+  boolean val_Z = digitalRead(joystick_Z);
+  val_Z = !val_Z;
+ 
+  
+  /*Serial.print("Axis_X:  ");
+  Serial.print(val_X);
+  Serial.print("  ");
+  Serial.print("Axis_Y:  ");
+  Serial.print(val_Y);
+  Serial.print("  ");
+  Serial.print("Axis_Z:  ");
+  Serial.println(val_Z);*/
+
+  Serial.print("Axis_Y_bottom:  ");
+  Serial.print(val_Y_bottom);
+  Serial.print("  ");
+  Serial.print("Axis_Y_top:  ");
+  Serial.print(val_Y_top);
+  Serial.print("  ");
+  Serial.print("angle_Y:  ");
+  Serial.println(angle_Y);
+
+
+  
+
