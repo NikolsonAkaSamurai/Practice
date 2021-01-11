@@ -1,0 +1,47 @@
+//for application on IOS " BLE Termial"
+
+#define blue 11
+#define green 10
+#define red 9
+bool blue_state = LOW;
+bool green_state = LOW;
+bool red_state = LOW;
+char getstr;
+
+void setup() {
+  pinMode(blue, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(red, OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void blueChange(){
+  blue_state = !blue_state;
+  digitalWrite(blue, blue_state);
+}
+
+void greenChange(){
+  green_state = !green_state;
+  digitalWrite(green, green_state);
+}
+
+void redChange(){
+  red_state = !red_state;
+  digitalWrite(red, red_state);
+}
+
+void loop() {
+ getstr = Serial.read();
+ if(getstr == 'b'){
+  blueChange();
+ }
+
+ if(getstr == 'g'){
+  greenChange();
+ }
+
+ if(getstr == 'r'){
+  redChange();
+ }
+}
