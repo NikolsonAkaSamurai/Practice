@@ -1,0 +1,45 @@
+using System;
+
+namespace Дз_Калькулятор
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {   
+            //Read nums and task
+            Console.WriteLine("Введите первое число");
+            double value1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            double value2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Выберите математическую операцию:\n(+) (-) (*) (/)");
+            string operation = Console.ReadLine();
+            double result;
+
+            //Operations
+            switch (operation)
+            {
+                case "+":
+                    result = Math.Round(value1 + value2, 3);
+                    Console.WriteLine($"Ваш результат: {result}");
+                    break;
+                case "-":
+                    result = Math.Round(value1 - value2, 3);
+                    Console.WriteLine($"Ваш результат: {result}");
+                    break;
+                case "*":
+                    result = Math.Round(value1 * value2, 3);
+                    Console.WriteLine($"Ваш результат: {result}");
+                    break;
+                case "/":
+                    result = Math.Round(value1 / value2, 3);
+                    Console.WriteLine($"Ваш результат: {result}");
+                    break;
+                default:
+                    Console.WriteLine("Неизвестная операция");
+                    break;       
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
